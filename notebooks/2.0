@@ -1,0 +1,11 @@
+Collecting shimmy
+  Obtaining dependency information for shimmy from https://files.pythonhosted.org/packages/4e/e9/64879ed81025b73865a0b6e5668735bf0b71feff5abb6e7a2bee2a1deae9/Shimmy-2.0.0-py3-none-any.whl.metadata
+  Downloading Shimmy-2.0.0-py3-none-any.whl.metadata (3.5 kB)
+Requirement already satisfied: numpy>=1.18.0 in d:\trabalho_individual\trabalho_individual\.venv\lib\site-packages (from shimmy) (2.2.5)
+Requirement already satisfied: gymnasium>=1.0.0a1 in d:\trabalho_individual\trabalho_individual\.venv\lib\site-packages (from shimmy) (1.1.1)
+Requirement already satisfied: cloudpickle>=1.2.0 in d:\trabalho_individual\trabalho_individual\.venv\lib\site-packages (from gymnasium>=1.0.0a1->shimmy) (3.1.1)
+Requirement already satisfied: typing-extensions>=4.3.0 in d:\trabalho_individual\trabalho_individual\.venv\lib\site-packages (from gymnasium>=1.0.0a1->shimmy) (4.13.2)
+Requirement already satisfied: farama-notifications>=0.0.1 in d:\trabalho_individual\trabalho_individual\.venv\lib\site-packages (from gymnasium>=1.0.0a1->shimmy) (0.0.4)
+Downloading Shimmy-2.0.0-py3-none-any.whl (30 kB)
+Installing collected packages: shimmy
+Successfully installed shimmy-2.0.0
