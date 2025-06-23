@@ -7,6 +7,8 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torchvision.transforms as T
+import zipfile
+
 
 #---Hiperparameters---
 ROOT = Path("../data")
@@ -53,8 +55,18 @@ def cifar10_loaders():
     return (DataLoader(tr, BATCH_SIZE, True,  num_workers=NUM_WORKERS),
             DataLoader(te, BATCH_SIZE*4, False, num_workers=NUM_WORKERS))
 
+def extrair_zip(arquivo_zip, pasta_destino):
+    with zipfile.ZipFile(arquivo_zip, 'r') as zip_ref:
+        zip_ref.extractall(pasta_destino)
 
+    
 def medical_loaders():
+    arq_zip = '../medical_mnist_dataset.zip'  # caminho do arquivo zip
+    if not os.path.exists(ROOT/"medical_mnist"):
+        if not os.path.exists(arq_zip):
+            raise FileNotFoundError(f"Arquivo {arq_zip} não encontrado. Baixe o arquivo do Kaggle.")
+        extrair_zip(arq_zip, ROOT/"medical_mnist")
+    
     med_root = ROOT/"medical_mnist"             # baixe via Kaggle antes!
     tf_train = T.Compose([T.Grayscale(),
                                    T.RandomRotation(10),
